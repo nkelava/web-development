@@ -102,7 +102,7 @@ print('''</td>
                 <td>Remarks:</td>
                 <td class="rowData">''')
 
-print(form_data.getvalue('remark') if len(str(form_data.getvalue('remark'))) > 0 else 'No remarks')
+print(form_data.getvalue('remark') if form_data.getvalue('remark') else 'No remarks')
 
 print('''</td>
             </tr>

@@ -164,7 +164,7 @@ def login():
     """)
 
 
-if params.getvalue('password') == params.getvalue('passwordR'):
+if params.getvalue('password') and params.getvalue('password') == params.getvalue('passwordR'):
     form()
 else:
     login()
