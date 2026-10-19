@@ -180,6 +180,6 @@ if (request_method == 'POST') and (not success):
     print(f'<script>alert("Login failed!\\n{alert_message[error_msg]}");</script>')
 
 print('''</body>
-        </html''')
+        </html>''')
 
 
