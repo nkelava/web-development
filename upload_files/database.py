@@ -2,7 +2,7 @@
 import mysql.connector
 import json
 from hasher import hash_string
-from errors import alert_status
+from alerts import alert_status
 from enum import Enum
 
 

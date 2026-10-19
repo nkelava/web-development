@@ -2,7 +2,7 @@
 from cgi import FieldStorage
 from os import environ
 from authentication import get_user_question
-from errors import alert_message, alert_status
+from alerts import alert_message, alert_status
 from hasher import verify_input
 from database import change_user_password
 

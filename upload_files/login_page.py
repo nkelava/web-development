@@ -2,7 +2,7 @@
 from cgi import FieldStorage
 from os import environ
 from authentication import authenticate
-from errors import alert_message, alert_status
+from alerts import alert_message, alert_status
 from session import create_session, add_to_session
 
 

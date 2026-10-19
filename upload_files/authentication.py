@@ -1,6 +1,6 @@
 from database import create_user, get_user_by_username, check_availability
 from hasher import verify_input
-from errors import alert_status
+from alerts import alert_status
 
 
 def register(user):
