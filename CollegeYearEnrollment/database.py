@@ -43,7 +43,7 @@ def create_session():
 def get_data(session_id):
     myDB = get_DB_connection()
     cursor = myDB.cursor()
-    cursor.execute("SELECT * FROM session WHERE session_id=" + str(session_id))
+    cursor.execute("SELECT * FROM session WHERE session_id=%s", (session_id,))
 
     myResult = cursor.fetchone()
     return myResult[0], json.loads(myResult[1])

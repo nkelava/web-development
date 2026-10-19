@@ -52,7 +52,7 @@ def create_user(user):
 def get_user_by_id(user_id):
     mydb = get_database_connection()
     cursor = mydb.cursor()
-    cursor.execute(f'SELECT * FROM users WHERE user_id="{user_id}"')
+    cursor.execute('SELECT * FROM users WHERE user_id=%s', (user_id,))
     myresult = cursor.fetchone()
     return myresult
 
@@ -68,7 +68,7 @@ def get_users():
 def get_user_by_username(username):
     mydb = get_database_connection()
     cursor = mydb.cursor()
-    cursor.execute(f'SELECT * FROM users WHERE username="{username}"')
+    cursor.execute('SELECT * FROM users WHERE username=%s', (username,))
     myresult = cursor.fetchone()
     return myresult
 
@@ -76,7 +76,7 @@ def get_user_by_username(username):
 def get_user_role(user_id):
     mydb = get_database_connection()
     cursor = mydb.cursor()
-    cursor.execute(f'SELECT roles.role FROM roles JOIN users ON users.role_id=roles.role_id WHERE users.user_id = "{user_id}"')
+    cursor.execute('SELECT roles.role FROM roles JOIN users ON users.role_id=roles.role_id WHERE users.user_id = %s', (user_id,))
     myresult = cursor.fetchone()
     return myresult[0]
 
@@ -84,21 +84,21 @@ def get_user_role(user_id):
 def delete_user(user_id):
     mydb = get_database_connection()
     cursor = mydb.cursor()
-    cursor.execute(f'DELETE FROM users WHERE user_id="{user_id}"')
+    cursor.execute('DELETE FROM users WHERE user_id=%s', (user_id,))
     mydb.commit()
 
 
 def update_user(user):
     mydb = get_database_connection()
     cursor = mydb.cursor()
-    cursor.execute(f'UPDATE users SET username="{user["username"]}", sex="{user["sex"]}", role_id={user["role_id"]} WHERE user_id="{user["user_id"]}"')
+    cursor.execute('UPDATE users SET username=%s, sex=%s, role_id=%s WHERE user_id=%s', (user['username'], user['sex'], user['role_id'], user['user_id']))
     mydb.commit()
 
 
 def get_role(role_id):
     mydb = get_database_connection()
     cursor = mydb.cursor()
-    cursor.execute(f'SELECT * FROM roles WHERE role_id="{role_id}"')
+    cursor.execute('SELECT * FROM roles WHERE role_id=%s', (role_id,))
     myresult = cursor.fetchone()
     return myresult
 
@@ -107,9 +107,9 @@ def check_availability(username, email):
     try:
         mydb = get_database_connection()
         cursor = mydb.cursor()
-        cursor.execute(f'SELECT * FROM users WHERE username="{username}"')
+        cursor.execute('SELECT * FROM users WHERE username=%s', (username,))
         username_result = cursor.fetchone()
-        cursor.execute(f'SELECT * FROM users WHERE email="{email}"')
+        cursor.execute('SELECT * FROM users WHERE email=%s', (email,))
         email_result = cursor.fetchone()
         mydb.close()
     except:
@@ -128,7 +128,7 @@ def change_user_password(username, password):
     hashed_password = hash_string(password)
     mydb = get_database_connection()
     cursor = mydb.cursor()
-    cursor.execute(f'UPDATE users SET password="{hashed_password}" WHERE username="{username}"')
+    cursor.execute('UPDATE users SET password=%s WHERE username=%s', (hashed_password, username))
     mydb.commit()
     mydb.close()
 
@@ -146,7 +146,7 @@ def create_session():
 def get_session(session_id):
     mydb = get_database_connection()
     cursor = mydb.cursor()
-    cursor.execute(f'SELECT * FROM sessions WHERE session_id={session_id}')
+    cursor.execute('SELECT * FROM sessions WHERE session_id=%s', (session_id,))
     myresult = cursor.fetchone()
     
     if (myresult is None):
@@ -157,7 +157,7 @@ def get_session(session_id):
 def destroy_session(session_id):
     mydb = get_database_connection()
     cursor = mydb.cursor()
-    cursor.execute(f'DELETE FROM sessions WHERE session_id={session_id}')
+    cursor.execute('DELETE FROM sessions WHERE session_id=%s', (session_id,))
     mydb.commit()
 
 
