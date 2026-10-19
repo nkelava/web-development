@@ -1,7 +1,5 @@
 #! C:\Users\Nikola Kelava\AppData\Local\Programs\Python\Python39\python.exe
 
-import cgi
-import os
 import cgitb
 cgitb.enable(display=0, logdir="")
 

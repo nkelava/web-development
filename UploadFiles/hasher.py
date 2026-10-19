@@ -1,4 +1,3 @@
-import base64
 from os import urandom
 from hashlib import sha256, pbkdf2_hmac
 from binascii import hexlify

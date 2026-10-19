@@ -1,7 +1,7 @@
 #! C:\Users\Nikola Kelava\AppData\Local\Programs\Python\Python38-32\python.exe
 from cgi import FieldStorage
 from session import get_session_data
-from database import get_user_role, delete_user, get_users
+from database import delete_user, get_users
 
 
 params = FieldStorage()

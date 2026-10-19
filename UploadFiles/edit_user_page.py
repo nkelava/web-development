@@ -2,7 +2,7 @@
 from cgi import FieldStorage
 from os import environ
 from session import get_session_data
-from database import get_user_role, update_user, get_user_by_id, get_user_role, Sex
+from database import get_user_role, update_user, get_user_by_id, Sex
 
 
 params = FieldStorage()

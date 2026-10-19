@@ -1,5 +1,4 @@
 import socket
-import re
 
 
 def connect_to_server(IP, port):
