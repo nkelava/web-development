@@ -1,6 +1,7 @@
 #! C:\Users\Nikola Kelava\AppData\Local\Programs\Python\Python38-32\python.exe
 from cgi import FieldStorage
 from os import environ
+from sys import exit
 from session import get_session_data
 from database import get_user_role, update_user, get_user_by_id, Sex
 
@@ -10,21 +11,17 @@ request_method = environ['REQUEST_METHOD'].upper()
 loggedin_user_data = get_session_data()
 
 # If user doesn't have session he isn't logged in so go back to login 
-# (in case unlogged person tries to access page via URL) 
-if (loggedin_user_data is None): 
+# (in case unlogged person tries to access page via URL), same for users who aren't admins
+if (loggedin_user_data is None) or (get_user_role(loggedin_user_data['user_id']).upper() != 'ADMIN'):
     print ('Location: login_page.py')
-else:
-	loggedin_user_id = loggedin_user_data['user_id']
-	loggedin_user_role = get_user_role(loggedin_user_id).upper()
- 
-	if (loggedin_user_role != 'ADMIN'):
-		print('Location: login_page.py')
-	else:
-		edit_id = params.getvalue('edit_id')
-        
+    print ()
+    exit()
+
+edit_id = params.getvalue('edit_id')
+
 if (request_method == 'POST'):
     user = {
-        'user_id': params.getvalue('edit_id'),
+        'user_id': edit_id,
         'username': params.getvalue('username'),
         'sex': params.getvalue('sex'),
         'role_id': 1 if (params.getvalue('role') == 'USER') else 0

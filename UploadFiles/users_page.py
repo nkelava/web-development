@@ -1,15 +1,18 @@
 #! C:\Users\Nikola Kelava\AppData\Local\Programs\Python\Python38-32\python.exe
 from cgi import FieldStorage
+from sys import exit
 from session import get_session_data
-from database import delete_user, get_users
+from database import get_user_role, delete_user, get_users
 
 
 params = FieldStorage()
 user_data = get_session_data()
 
-# If user doesn't have session he isn't logged in so go back to login
-if (user_data is None):
+# If user doesn't have session he isn't logged in so go back to login, same for users who aren't admins
+if (user_data is None) or (get_user_role(user_data['user_id']).upper() != 'ADMIN'):
     print('Location: login_page.py')
+    print()
+    exit()
     
 delete_id = params.getvalue('delete_id')
 
@@ -116,7 +119,7 @@ for user in users:
  
 print('''       <tr class="last-row">
                     <td ><a href="register_page.py">Add user</a></td>
-                    <td colspan="2"><a href="upload_page.py">Go back</td>
+                    <td colspan="2"><a href="upload_page.py">Go back</a></td>
                 </tr>
             </table>
         </body>
