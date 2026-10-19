@@ -46,6 +46,8 @@ def get_data(session_id):
     cursor.execute("SELECT * FROM session WHERE session_id=%s", (session_id,))
 
     myResult = cursor.fetchone()
+    if myResult is None:    # Cookie points to a session that no longer exists, start with empty data
+        return session_id, {}
     return myResult[0], json.loads(myResult[1])
 
 
