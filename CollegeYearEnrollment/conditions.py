@@ -40,6 +40,8 @@ def count_ects(year):
             if (subjects[subject]['status'] == 'e'):
                 ectsCnt += subjects[subject]['ects']
                 continue
+        elif (subjects[subject]['year'] != year):   # Count only subjects from the requested year
+            continue
              
         if(subjects[subject]['status'] == 'p'):
             ectsCnt += subjects[subject]['ects']

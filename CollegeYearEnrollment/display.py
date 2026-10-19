@@ -104,6 +104,9 @@ def print_subject(subjectKey, year, data):
     subjects[subjectKey]['status'] = status
     
     if (year == 4):   # Case when certificate button is pressed, just list subjects and their status
+        if (subjects[subjectKey]['year'] == 3) and (check_conditions(3) == False):
+            status = 'n'    # Third year subjects can't be enrolled nor passed if conditions failed
+            subjects[subjectKey]['status'] = status
         print_certificate(name, ects, status)
     else:
         if (year == 3) and (check_conditions(year) == False):
