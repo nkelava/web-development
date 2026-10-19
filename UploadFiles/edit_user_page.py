@@ -24,7 +24,7 @@ if (request_method == 'POST'):
         'user_id': edit_id,
         'username': params.getvalue('username'),
         'sex': params.getvalue('sex'),
-        'role_id': 1 if (params.getvalue('role') == 'USER') else 0
+        'role_id': 1 if (str(params.getvalue('role')).upper() == 'USER') else 0
     }
     update_user(user)
     print("Location: users_page.py")
