@@ -1,6 +1,7 @@
 #! C:\Users\Nikola Kelava\AppData\Local\Programs\Python\Python38-32\python.exe
 from cgi import FieldStorage
 from os import environ, mkdir, path, listdir
+from sys import exit
 from session import get_session_data, destroy_session
 from database import get_user_role
 
@@ -9,8 +10,11 @@ params = FieldStorage()
 request_type = environ['REQUEST_METHOD'].upper()
 user_data = get_session_data()
 
+# Stop here because the rest of the page needs a logged in user
 if (user_data is None):
     print('Location: login_page.py')
+    print()
+    exit()
 
 img_dir_path = '../../../../htdocs/images'
 
@@ -18,15 +22,18 @@ if (not path.isdir(img_dir_path)): # otherwise it returns error with every POST
     mkdir(img_dir_path)
  
 images = listdir(img_dir_path)
+success = True
 
 if (request_type == 'POST'):
     if (params.getvalue('btn_submit') == 'Log out'):
         destroy_session()
         print('Location: login_page.py')
+        print()
+        exit()
     else: 
-        file_item = params["image"]
+        file_item = params["image"] if ("image" in params) else None
 
-        if (file_item.filename):
+        if (file_item is not None) and (file_item.filename):
             img_dir_path = '../../../../htdocs/images/'
             img_dir_path += path.basename(file_item.filename)
             open(img_dir_path, 'wb').write(file_item.file.read(2500000))
