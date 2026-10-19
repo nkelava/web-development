@@ -124,10 +124,10 @@ def form():
                     <td class="rowSubject">Specialisation:</td>
                     <td class="rowAnswer">
                         <select name="specialisation">
-                            <option value="Databases">Databases</option>
-                            <option value="Programming">Programming</option>
-                            <option value="Information systems">Information systems</option>
-                            <option value="Computer networks">Computer networks</option>
+                            <option value="Baze podataka">Baze podataka</option>
+                            <option value="Programiranje">Programiranje</option>
+                            <option value="Informacijski sustavi">Informacijski sustavi</option>
+                            <option value="Racunalne mreze">Racunalne mreze</option>
                         </select>
                     </td>
                 </tr>
