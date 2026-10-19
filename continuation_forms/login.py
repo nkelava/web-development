@@ -77,7 +77,7 @@ print  ("""
     </style>
 </head>    
 <body>
-    <form action="studentInfoForm.py" method="POST">
+    <form action="student_info_form.py" method="POST">
         <table>
             <tr>
                 <th colspan="2">Login</th>

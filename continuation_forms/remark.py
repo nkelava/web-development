@@ -80,7 +80,7 @@ print ('''
     </style>
 </head>    
 <body>
-    <form action="registrationCertificate.py" method="POST">
+    <form action="registration_certificate.py" method="POST">
         <table>
             <tr>
                 <th colspan="2">Remark</th>
