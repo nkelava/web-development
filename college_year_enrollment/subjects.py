@@ -14,16 +14,16 @@ subjects = {
 }
         
 year_names = {
-    1 : '1. Year',
-    2 : '2. Year',
-    3 : '3. Year',
+    1 : 'Year 1',
+    2 : 'Year 2',
+    3 : 'Year 3',
     4 : 'Certificate',
 }
 
 year_ids = {
-    '1. Year' : 1,
-    '2. Year' : 2,
-    '3. Year' : 3,
+    'Year 1' : 1,
+    'Year 2' : 2,
+    'Year 3' : 3,
 }
 
 status_names = {

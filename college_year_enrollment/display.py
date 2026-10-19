@@ -81,9 +81,9 @@ def start_html(year):
     </head>
     <body>
         <form action="index.py" method="POST">
-            <button id="first" type="submit" name="btnYear" value="1">1. Year</button>
-            <button type="submit" name="btnYear" value="2">2. Year</button>
-            <button type="submit" name="btnYear" value="3">3. Year</button>
+            <button id="first" type="submit" name="btnYear" value="1">Year 1</button>
+            <button type="submit" name="btnYear" value="2">Year 2</button>
+            <button type="submit" name="btnYear" value="3">Year 3</button>
             <button type="submit" name="btnYear" value="4">Certificate</button>
 
             <table>

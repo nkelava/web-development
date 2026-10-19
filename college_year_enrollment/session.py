@@ -13,7 +13,7 @@ def get_or_create_sessionID():
         session_id = database.create_session()
         cookiesObject = cookies.SimpleCookie()
         cookiesObject["session_id"] = session_id
-        cookiesObject.output()  # set cookie-a in header
+        cookiesObject.output()  # set cookie in header
         print(f"Set-Cookie:session_id = {session_id};")
     return session_id
 

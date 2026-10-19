@@ -110,10 +110,10 @@ def form():
                 <tr>
                     <td class="rowSubject">Status:</td>
                     <td class="rowAnswer">
-                        <input type="radio" name="status" value="Redovan" checked>
-                        <label class="regular">Redovan</label>
-                        <input type="radio" name="status" value="Izvanredan">
-                        <label>Izvanredan</label>
+                        <input type="radio" name="status" value="Full-time" checked>
+                        <label class="regular">Full-time</label>
+                        <input type="radio" name="status" value="Part-time">
+                        <label>Part-time</label>
                     </td>
                 </tr>
                 <tr>
@@ -124,10 +124,10 @@ def form():
                     <td class="rowSubject">Spec:</td>
                     <td class="rowAnswer">
                         <select name="specialisation">
-                            <option value="Baze podataka">Baze podataka</option>
-                            <option value="Programiranje">Programiranje</option>
-                            <option value="Informacijski sustavi">Informacijski sustavi</option>
-                            <option value="Racunalne mreze">Racunalne mreze</option>
+                            <option value="Databases">Databases</option>
+                            <option value="Programming">Programming</option>
+                            <option value="Information systems">Information systems</option>
+                            <option value="Computer networks">Computer networks</option>
                         </select>
                     </td>
                 </tr>

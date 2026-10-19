@@ -10,7 +10,7 @@ from os import environ
 params = cgi.FieldStorage()
 
 btnYear = params.getvalue('btnYear')
-year = 1 if btnYear is None else int(btnYear)   # For first GET request year is None so set year to 1(1.year) as default
+year = 1 if btnYear is None else int(btnYear)   # For the first GET request year is None, so set it to 1 (Year 1) by default
 
 if environ['REQUEST_METHOD'] == 'POST':  # In case of POST add info to session if not that means it's first GET request so create session
     session_id = session.add_to_session(params)
