@@ -156,7 +156,7 @@ def login():
         <!DOCTYPE html>
         <html>
         <head>
-         <meta http-equiv="refresh" content="0;url=http://localhost/cgi-bin/continuation_forms/login.py" /> 
+         <meta http-equiv="refresh" content="0;url=login.py" /> 
         </head>
         <body>
         </body>

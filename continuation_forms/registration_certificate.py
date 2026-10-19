@@ -108,7 +108,7 @@ print('''</td>
             </tr>
         </table>
         <div class="linkContainer">
-         <a href="http://localhost/cgi-bin/continuation_forms/login.py">Back to start...</a>
+         <a href="login.py">Back to start...</a>
         </div>
     </form> 
 </body>
