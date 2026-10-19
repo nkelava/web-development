@@ -10,8 +10,8 @@ params = FieldStorage()
 request_method = environ['REQUEST_METHOD'].upper()
 loggedin_user_data = get_session_data()
 
-# If user doesn't have session he isn't logged in so go back to login 
-# (in case unlogged person tries to access page via URL), same for users who aren't admins
+# If the user doesn't have a session, they aren't logged in, so go back to login
+# (in case a logged out person tries to access the page via URL), same for users who aren't admins
 if (loggedin_user_data is None) or (get_user_role(loggedin_user_data['user_id']).upper() != 'ADMIN'):
     print ('Location: login_page.py')
     print ()

@@ -22,7 +22,7 @@ if (request_method == 'POST'):
     
     if(stage != None):
         stored_question, stored_answer = get_user_question(user)
-        # Nested if-else statements primarily for specifying what went wrong and secondly for controlling flow
+        # Nested if-else statements, primarily to specify what went wrong and secondly to control the flow
         if(stored_question):
             if(stage == 'Reset') and (verify_input(stored_answer, user['answer'].lower())):
                 if(user['password'] == user['repeated_password']):

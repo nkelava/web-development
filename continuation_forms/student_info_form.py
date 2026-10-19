@@ -105,7 +105,7 @@ def form():
         <form action="remark.py" method="POST">
             <table>
                 <tr>
-                    <th colspan="2">Fill-in the form</th>
+                    <th colspan="2">Fill in the form</th>
                 </tr>
                 <tr>
                     <td class="rowSubject">Status:</td>
@@ -121,7 +121,7 @@ def form():
                     <td class="rowAnswer"><input type="email" name="email" value="" placeholder="Enter your e-mail..." required></td>
                 </tr>
                 <tr>
-                    <td class="rowSubject">Spec:</td>
+                    <td class="rowSubject">Specialisation:</td>
                     <td class="rowAnswer">
                         <select name="specialisation">
                             <option value="Databases">Databases</option>
@@ -132,7 +132,7 @@ def form():
                     </td>
                 </tr>
                 <tr>
-                    <td class="rowSubject">Master thesis:</td>
+                    <td class="rowSubject">Master's thesis:</td>
                     <td class="rowAnswer"><input type="checkbox" name="masters" value="Yes"></td>
                 </tr>
                 <tr>

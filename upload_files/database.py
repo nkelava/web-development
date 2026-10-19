@@ -161,7 +161,7 @@ def destroy_session(session_id):
     mydb.commit()
 
 
-def replace_session(session_id, data): # Replace-delete first, then insert (delete/insert)
+def replace_session(session_id, data): # Replace - delete first, then insert (delete/insert)
     query = 'REPLACE INTO sessions(session_id, data) VALUES (%s, %s)'
     values = (session_id, json.dumps(data))
     mydb = get_database_connection()

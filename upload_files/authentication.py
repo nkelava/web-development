@@ -4,7 +4,7 @@ from alerts import alert_status
 
 
 def register(user):
-    # Continue if password and repeated password are same AND username and email are available
+    # Continue if password and repeated password are the same AND username and email are available
     availability = check_availability(user['username'], user['email'])
     password_check = True if (user['password'] == user['repeated_password']) else False
 
@@ -16,7 +16,7 @@ def register(user):
 
 def authenticate(user):
     user_record = get_user_by_username(user['username'])
-    # Continue if there is a user record in database AND passwords are matching
+    # Continue if there is a user record in the database AND the passwords match
     if (user_record) and (verify_input(user_record[2], user['password'])):
         return True, user_record[0]
     else:

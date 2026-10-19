@@ -85,13 +85,13 @@ print(form_data.getvalue('status'))
 print('''</td>
             </tr>
             <tr>
-                <td>Spec.:</td>
+                <td>Specialisation:</td>
                 <td class="rowData">''')
 print(form_data.getvalue('specialisation'))
 print('''</td>
             </tr>
             <tr>
-                <td>Master thesis: </td>
+                <td>Master's thesis: </td>
                 <td class="rowData">''')
 
 print('Yes' if form_data.getvalue('masters') == "Yes" else 'No')

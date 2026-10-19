@@ -5,11 +5,11 @@ subjects = {
     'dmt' : { 'name' : 'Digital and microprocessor technology', 'year' : 1, 'ects' : 6, 'status': 'n'},
     'db' : { 'name' : 'Databases' , 'year' : 2, 'ects' : 6, 'status': 'n'},
     'c2' : { 'name' : 'Calculus 2' , 'year' : 2, 'ects' : 7, 'status': 'n'},
-    'dsa' : { 'name' : 'Data structures and alghoritms' , 'year' : 2, 'ects' : 5, 'status': 'n'},
+    'dsa' : { 'name' : 'Data structures and algorithms' , 'year' : 2, 'ects' : 5, 'status': 'n'},
     'ca' : { 'name' : 'Computer architecture', 'year' : 2, 'ects' : 6, 'status': 'n'},
     'isd' : { 'name' : 'Information systems design' , 'year' : 3, 'ects' : 5 , 'status': 'n'},
     'c3' : { 'name' : 'Calculus 3' , 'year' : 3, 'ects' : 7, 'status': 'n'},
-    'sa' : { 'name' : 'Server Architecture' , 'year' : 3, 'ects' : 6, 'status': 'n'},
+    'sa' : { 'name' : 'Server architecture' , 'year' : 3, 'ects' : 6, 'status': 'n'},
     'cds' : { 'name' : 'Computer and data security', 'year' : 3, 'ects' : 6, 'status': 'n'},
 }
         

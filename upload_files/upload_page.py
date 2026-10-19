@@ -10,7 +10,7 @@ params = FieldStorage()
 request_type = environ['REQUEST_METHOD'].upper()
 user_data = get_session_data()
 
-# Stop here because the rest of the page needs a logged in user
+# Stop here because the rest of the page needs a logged-in user
 if (user_data is None):
     print('Location: login_page.py')
     print()
@@ -18,7 +18,7 @@ if (user_data is None):
 
 img_dir_path = '../../../../htdocs/images'
 
-if (not path.isdir(img_dir_path)): # otherwise it returns error with every POST
+if (not path.isdir(img_dir_path)): # otherwise it returns an error with every POST
     mkdir(img_dir_path)
  
 images = listdir(img_dir_path)

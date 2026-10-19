@@ -14,10 +14,10 @@ alert_status = {
 
 alert_message = {
     'iup': 'You have entered an invalid username and/or password.',
-    'rpdm': 'Passwords do not match!\\nPlease make sure you enter same password in both password fields.',
+    'rpdm': 'Passwords do not match!\\nPlease make sure you enter the same password in both password fields.',
     'ue': 'The username already exists!\\nPlease use a different username.',
     'ee': 'The e-mail already exists!\\nPlease use a different e-mail.',
-    'de': 'We apologize but there are some technical issues!\\nWe will solve them as soon as possible so please try again later.',
+    'de': 'We apologize, but there are some technical issues!\\nWe will solve them as soon as possible, so please try again later.',
     'ude': 'The username you entered does not exist.',
     'adm': 'The answer you entered is incorrect.'
 }

@@ -21,10 +21,10 @@ def get_or_create_sessionID():
 def add_to_session(params):
     session_id = get_or_create_sessionID()
 
-    _, data = database.get_data(session_id)   # Return all data so far
+    _, data = database.get_data(session_id)   # Get all data so far
 
     for cbox_id in params.keys():
-        if (cbox_id != 'btnYear'):  # There is no need for storing current year value in data
+        if (cbox_id != 'btnYear'):  # There is no need to store the current year value in data
             data[params.getvalue(cbox_id)] = data.get(cbox_id, 0) + 1
 
     data = filter_data(data)

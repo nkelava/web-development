@@ -50,7 +50,7 @@ def pass_received_message(server, nextSocket, serverID):
 		while True:
 			msg = previous.recv(1024).decode("utf-8")
 			if msg == messages[serverID]:
-				print(f'Message {msg} passed through ring! {server.getsockname()} received his message.')
+				print(f'Message {msg} passed through the ring! {server.getsockname()} received its message.')
 				messages[serverID] = ""
 			else:
 				print(f'Message {msg} received. {server.getsockname()} passing to {nextSocket.getpeername()}.')
@@ -75,7 +75,7 @@ def main():
 if __name__  == "__main__":
 	IP = "127.0.0.1"
 	STARTING_PORT = 40101
-	numberOfServers = int(input('Enter number of servers: '))
+	numberOfServers = int(input('Enter the number of servers: '))
 	print('\r')
 	
 	messages = [None] * numberOfServers

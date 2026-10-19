@@ -88,7 +88,7 @@ print ('''
             <tr>
                 <td class="columnSubject">Remarks:</td>
                 <td class="columnTextarea">
-                    <textarea name="remark" rows="6" cols="30" placeholder="e.g. Switching to half time study program..."></textarea>
+                    <textarea name="remark" rows="6" cols="30" placeholder="e.g. Switching to a part-time study program..."></textarea>
                 </td>
             </tr>
             <tr>

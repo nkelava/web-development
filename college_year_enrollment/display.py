@@ -103,14 +103,14 @@ def print_subject(subjectKey, year, data):
     status = get_status(subjectKey, data)
     subjects[subjectKey]['status'] = status
     
-    if (year == 4):   # Case when certificate button is pressed, just list subjects and their status
+    if (year == 4):   # When the certificate button is pressed, just list subjects and their statuses
         if (subjects[subjectKey]['year'] == 3) and (check_conditions(3) == False):
-            status = 'n'    # Third year subjects can't be enrolled nor passed if conditions failed
+            status = 'n'    # Third year subjects can be neither enrolled nor passed if the conditions failed
             subjects[subjectKey]['status'] = status
         print_certificate(name, ects, status)
     else:
         if (year == 3) and (check_conditions(year) == False):
-            update_status()   # Reading statuses in certificate page from subjects script so it needs to be updated
+            update_status()   # The certificate page reads statuses from the subjects script, so they need to be updated
             status = 'n'
         
         if (subjects[subjectKey]['year'] == year):
@@ -129,7 +129,7 @@ def print_year(subjectKey, name, ects, status):
 
 
 def print_checkbox(subjectKey, statusKey, subjectStatus):
-    if (statusKey == subjectStatus):  # Check value with element from session data
+    if (statusKey == subjectStatus):  # Compare the value with the element from session data
         print('<input type="radio" name="{0}" value="{1}" checked> {2}'.format('r'+subjectKey, subjectStatus+subjectKey, status_names[statusKey]))
     else:
         print('<input type="radio" name="{0}" value="{1}"> {2}'.format('r'+subjectKey, statusKey+subjectKey, status_names[statusKey]))

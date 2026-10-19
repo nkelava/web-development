@@ -8,7 +8,7 @@ from database import get_user_role, delete_user, get_users
 params = FieldStorage()
 user_data = get_session_data()
 
-# If user doesn't have session he isn't logged in so go back to login, same for users who aren't admins
+# If the user doesn't have a session, they aren't logged in, so go back to login, same for users who aren't admins
 if (user_data is None) or (get_user_role(user_data['user_id']).upper() != 'ADMIN'):
     print('Location: login_page.py')
     print()

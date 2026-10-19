@@ -15,7 +15,7 @@ def get_database_connection():
     return myDB
 
 
-def check_table_existance(dbConn, tableName):
+def check_table_existence(dbConn, tableName):
     dbCur = dbConn.cursor()
     dbCur.execute("SELECT COUNT(*) FROM sessiondb.tables WHERE table_name = '{0}'".format(tableName.replace("\'", "\'\'")))
     
@@ -34,7 +34,7 @@ def create_table(dbConn):
 
 
 dbConnection = get_database_connection()
-# check_table_existance(dbConnection, 'session')
+# check_table_existence(dbConnection, 'session')
 create_table(dbConnection)
 dbConnection.close()
 

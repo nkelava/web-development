@@ -12,7 +12,7 @@ params = cgi.FieldStorage()
 btnYear = params.getvalue('btnYear')
 year = 1 if btnYear is None else int(btnYear)   # For the first GET request year is None, so set it to 1 (Year 1) by default
 
-if environ['REQUEST_METHOD'] == 'POST':  # In case of POST add info to session if not that means it's first GET request so create session
+if environ['REQUEST_METHOD'] == 'POST':  # In case of POST add info to the session, otherwise it's the first GET request, so create a session
     session_id = session.add_to_session(params)
 else:
     session_id = session.get_or_create_sessionID()

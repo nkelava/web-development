@@ -51,7 +51,7 @@ def get_data(session_id):
     return myResult[0], json.loads(myResult[1])
 
 
-def replace_session(session_id, data):  # Replace- delete old first, than just replace with new data
+def replace_session(session_id, data):  # Replace - delete old data first, then insert new data
     mydb = get_DB_connection()
     cursor = mydb.cursor()
     cursor.execute("""REPLACE INTO session (session_id, data) VALUES (%s, %s)""", (session_id, json.dumps(data)))

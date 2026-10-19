@@ -2,21 +2,21 @@ from subjects import subjects
 
 
 def get_status(subjectKey, data):
-    for element in data:                # Go throu data and if radio button was pressed first letter will be status key
+    for element in data:                # Go through data and if a radio button was pressed, its first letter is the status key
         if (element[1:] == subjectKey):
             return element[:1]
-    return 'n'                          # If any subject radio button wasn't pressed set it to 'Not selected' as default 
+    return 'n'                          # If no radio button was pressed for the subject, set it to 'Not selected' by default 
 
 
 def check_conditions(year):
-    if (year == 3): # No conditions for selection in first two year
-        # You can set enrolled or passed in third year only if you passed whole first year and if you passed second year subjects whose ECTS sum exceeds 10 
+    if (year == 3): # No conditions for selection in the first two years
+        # You can set enrolled or passed in the third year only if you passed the whole first year and passed second year subjects worth at least 10 ECTS 
         return True if (check_first_year() == True) and (check_second_year_ECTS() == True) else False
     return True
 
 
 def check_first_year():
-    for subject in subjects:    # Update third year session data on first occurrence of not passed subject in first year
+    for subject in subjects:    # Stop on the first subject in the first year that isn't passed
         if (subjects[subject]['year'] == 1):
             if (subjects[subject]['status'] != 'p'):
                 return False
@@ -24,11 +24,11 @@ def check_first_year():
 
 
 def check_second_year_ECTS():
-    return False if (count_ects(2) < 10) else True    # If a student didn't get more than 10 ECTS in second year refresh session data from third year to 'Not selected'
+    return False if (count_ects(2) < 10) else True    # If a student didn't get at least 10 ECTS in the second year, third year subjects are set to 'Not selected'
 
 
 def update_status():
-    for subject in subjects:    # This is in case if conditions failed, so set every subject status to 'Not selected' because it can't be enrolled nor passed
+    for subject in subjects:    # In case the conditions failed, set every third year subject status to 'Not selected' because it can be neither enrolled nor passed
         if (subjects[subject]['year'] == 3):
             subjects[subject]['status'] = 'n'
 

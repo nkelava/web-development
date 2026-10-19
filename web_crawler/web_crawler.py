@@ -13,8 +13,8 @@ def connect_to_server(IP, port):
 
 def parse_URL(link):
     # Check if link/URL is relative or absolute, extract domain
-    # relative (just path without domain e.g. '/xyz'), absolute ( whole path e.g. 'http://google.com/xyz') 
-    # e.g. http://www.scretch.cu/explore/sites-list => HOST/DOMAIN=www.scretch.cu, PATH=/explore/sites=list 
+    # relative (just path without domain e.g. '/xyz'), absolute (whole path e.g. 'http://google.com/xyz') 
+    # e.g. http://www.scretch.cu/explore/sites-list => HOST/DOMAIN=www.scretch.cu, PATH=explore/sites-list 
     beginning_host = link.find('http://', 0)
     end_host = link.find('/', 7)
 
@@ -22,7 +22,7 @@ def parse_URL(link):
 
     if domain.find('www.') == -1:
         domain = 'www.' + domain
-    # Lasty check if there is a path to file in parsed link
+    # Lastly, check if there is a path to a file in the parsed link
     path = link[end_host+1 if end_host != -1 else len(link):]
     return domain, path
 
@@ -66,7 +66,7 @@ for link in scraped_links:
 
     page_source = get_source(domain, path, sock)
     get_scraped_links(page_source, scraped_links)
-    # URL is valid and scrapped so add it to list of visited links
+    # URL is valid and scraped, so add it to the list of visited links
     visited_links.append(link)
 
     if counter_visited == 50: break
